@@ -9,19 +9,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <main>
-        <section class='untrimmed'>
-            <textarea class='code' placeholder="// Untrimmed SVG code (Input)"></textarea>
-            <div class="svg-container">UNTRIMMED SVG PREVIEW</div>
-        </section>
+<!-- <body> -->
+<main>
+    <section class='untrimmed'>
+        <textarea class='code' placeholder="&lt;!-- Untrimmed SVG code (Input) --&gt;">
+            <svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.32916 9.43545L9.1055 0.938107C9.64298 0.350791 10.5121 0.350791 11.0439 0.938107L12.3361 2.35017C12.8736 2.93748 12.8736 3.88719 12.3361 4.46825L6.82978 10.4976L12.3418 16.5207C12.8793 17.1081 12.8793 18.0578 12.3418 18.6388L11.0496 20.0571C10.5121 20.6444 9.64298 20.6444 9.11122 20.0571L1.33488 11.5598C0.791675 10.9725 0.791675 10.0228 1.32916 9.43545Z" fill="#464646"/></svg>
+        </textarea>
+        <div class="svg-container">UNTRIMMED SVG PREVIEW</div>
+    </section>
 
-        <section class='trimmed'>
-            <textarea class='code' placeholder="// Trimmed SVG code (Output)" readonly></textarea>
-            <div class="svg-container">TRIMMED SVG PREVIEW</div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+    <section class='trimmed'>
+        <div class="output-container">
+            <textarea class='code' placeholder="&lt;!-- Output --&gt;" readonly></textarea>
+            <svg class='copy-button' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1" width="24" height="24" viewBox="0 0 24 24">
+                <path
+                    d="M19,21H8V7H19M19,5H8C6.9,5 6,5.9 6,7V21C6,22.1 6.9,23 8,23H19C20.1,23 21,22.1 21,21V7C21,5.9 20.1,5 19,5M16,1H4C2.9,1 2,1.9 2,3V17H4V3H16V1Z" />
+            </svg>
+        </div>
+        <figure class="svg-container">TRIMMED SVG PREVIEW</figure>
+
+    </section>
+</main>
+<script src="script.js"></script>
 </body>
 
 </html>

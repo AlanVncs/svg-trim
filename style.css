@@ -7,6 +7,7 @@
 main {
 	display: flex;
 	flex-direction: column;
+	padding: 16px;
 }
 
 .untrimmed {
@@ -23,7 +24,7 @@ main {
 .code {
 	flex-grow: 1;
 	background: #f4f4f4;
-	border: 1px solid #ddd;
+	border: 1px solid #eee;
 	color: #666;
 	page-break-inside: avoid;
 	font-family: monospace;
@@ -48,12 +49,52 @@ main {
 	height: 100%;
 	width: 400px;
 	margin-left: 16px;
-	border: 1px solid #ddd;
+	border: 1px solid #eee;
 }
 
 .svg-container svg {
 	height: 100%;
-	width: 100%;
-	/* max-width: 100%; */
-	border: 1px solid red;
+	width: auto;
+	border: 1px solid #aaa;
+}
+
+.output-container {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+}
+
+.output-container .copy-button {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	height: 40px;
+	width: auto;
+	cursor: pointer;
+	padding: 4px;
+}
+
+.output-container::before {
+	position: absolute;
+	top: calc(100% + 8px);
+	right: 16px;
+	content: 'Código copiado! ;D';
+	color: rgb(67, 145, 67);
+	font-size: 16px;
+	opacity: 0;
+	transition: 500ms;
+}
+
+.output-container.copied::before {
+	opacity: 1;
+
+	transition: 0ms;
+}
+
+.output-container .copy-button:hover {
+	transform: scale(1.06);
+}
+
+.output-container .copy-button:active {
+	transform: scale(1);
 }
