@@ -1,100 +1,156 @@
 * {
-	color: #666;
-	font-family: monospace;
-	font-size: 15px;
+  color: #666;
+  font-family: monospace;
+  font-size: 15px;
 }
 
 main {
-	display: flex;
-	flex-direction: column;
-	padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
 .untrimmed {
-	display: flex;
-	height: 400px;
+  display: flex;
+  height: 400px;
 }
 
 .trimmed {
-	margin-top: 32px;
-	display: flex;
-	height: 400px;
+  margin-top: 32px;
+  display: flex;
+  height: 400px;
 }
 
 .code {
-	flex-grow: 1;
-	background: #f4f4f4;
-	border: 1px solid #eee;
-	color: #666;
-	page-break-inside: avoid;
-	font-family: monospace;
-	font-size: 15px;
-	line-height: 1.6;
-	overflow: auto;
-	padding: 1em 1.5em;
-	display: block;
-	word-wrap: break-word;
-	resize: none;
-	outline: none;
+  flex-grow: 1;
+  background: #f4f4f4;
+  border: 1px solid #eee;
+  color: #666;
+  page-break-inside: avoid;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow: auto;
+  padding: 1em 1.5em;
+  display: block;
+  word-wrap: break-word;
+  resize: none;
+  outline: none;
 }
 
 .code:focus {
-	border: 1px solid #aaa;
+  border: 1px solid #aaa;
 }
 
 .svg-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	width: 400px;
-	margin-left: 16px;
-	border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 400px;
+  margin-left: 16px;
+  border: 1px solid #eee;
 }
 
 .svg-container svg {
-	height: 100%;
-	width: auto;
-	border: 1px solid #aaa;
+  height: 100%;
+  width: auto;
+  border: 1px solid #aaa;
+}
+
+.input-container {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+}
+
+.add-file-button svg {
+  height: 40px;
+  stroke: #000;
+  cursor: pointer;
+}
+
+.add-file-button:hover,
+.add-file-button:active {
+  transform: scale(1.06);
+}
+
+#file-selector {
+  display: none;
+}
+
+.add-file-button {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  cursor: pointer;
 }
 
 .output-container {
-	position: relative;
-	flex-grow: 1;
-	display: flex;
+  position: relative;
+  flex-grow: 1;
+  display: flex;
 }
 
 .output-container .copy-button {
-	position: absolute;
-	right: 16px;
-	bottom: 16px;
-	height: 40px;
-	width: auto;
-	cursor: pointer;
-	padding: 4px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+  padding: 4px;
 }
 
 .output-container::before {
-	position: absolute;
-	top: calc(100% + 8px);
-	right: 16px;
-	content: 'Código copiado! ;D';
-	color: rgb(67, 145, 67);
-	font-size: 16px;
-	opacity: 0;
-	transition: 500ms;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 16px;
+  content: "Código copiado! ;D";
+  color: rgb(67, 145, 67);
+  font-size: 16px;
+  opacity: 0;
+  transition: 500ms;
 }
 
 .output-container.copied::before {
-	opacity: 1;
+  opacity: 1;
 
-	transition: 0ms;
+  transition: 0ms;
 }
 
 .output-container .copy-button:hover {
-	transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .output-container .copy-button:active {
-	transform: scale(1);
+  transform: scale(1);
+}
+
+.dropzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+
+  visibility: hidden;
+  opacity: 0;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+
+  transition: all 0.2s;
+}
+
+.dropzone.active {
+  visibility: visible;
+  opacity: 1;
 }
